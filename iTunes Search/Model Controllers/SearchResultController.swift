@@ -9,6 +9,9 @@
 import Foundation
 
 class SearchResultController {
+
+    let baseURL = URL(string: "https://itunes.apple.com/search")!
+    var searchResults: [SearchResult] = []
     
     func performSearch(for searchTerm: String, resultType: ResultType, completion: @escaping () -> Void) {
         
@@ -40,7 +43,4 @@ class SearchResultController {
         }
         dataTask.resume()
     }
-    
-    let baseURL = URL(string: "https://itunes.apple.com/search")!
-    var searchResults: [SearchResult] = []
 }

@@ -62,6 +62,7 @@
 		46BF02292117D59500A24DE5 /* iTunes Search */ = {
 			isa = PBXGroup;
 			children = (
+				CED7EE832497CB530056AA00 /* Application */,
 				46BF024A2117E4E400A24DE5 /* Models */,
 				46BF024C2117E4F400A24DE5 /* Model Controllers */,
 				46BF02492117E4DF00A24DE5 /* View Controllers */,
@@ -76,7 +77,6 @@
 			children = (
 				46BF02442117E36400A24DE5 /* ResultType.swift */,
 				46BF02462117E36F00A24DE5 /* HTTPMethod.swift */,
-				46BF022A2117D59500A24DE5 /* AppDelegate.swift */,
 				46BF02312117D59700A24DE5 /* Assets.xcassets */,
 				46BF02362117D59700A24DE5 /* Info.plist */,
 			);
@@ -114,6 +114,14 @@
 				46BF02402117DC5200A24DE5 /* SearchResultController.swift */,
 			);
 			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		CED7EE832497CB530056AA00 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				46BF022A2117D59500A24DE5 /* AppDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
