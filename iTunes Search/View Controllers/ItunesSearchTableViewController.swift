@@ -11,7 +11,6 @@ import UIKit
 class ItunesSearchTableViewController: UITableViewController, UISearchBarDelegate {
     
     let searchResultController = SearchResultController()
-    var searchResults: [SearchResult] = []
     
     @IBOutlet weak var resultTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -40,15 +39,9 @@ class ItunesSearchTableViewController: UITableViewController, UISearchBarDelegat
             break
         }
         
-        searchResultController.performSearch(for: searchTerm, resultType: resultType) { (result) in
-            switch result {
-            case .success(let result):
-                DispatchQueue.main.async {
-                    self.searchResults = result
-                    self.tableView.reloadData()
-                }
-            case .failure(let error):
-                print(error)
+        searchResultController.performSearch(for: searchTerm, resultType: resultType) {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
         }
     }
@@ -56,7 +49,7 @@ class ItunesSearchTableViewController: UITableViewController, UISearchBarDelegat
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchResults.count
+        return searchResultController.searchResults.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
